@@ -32,19 +32,31 @@ describe Budget do
       expect(budget.departments).to eq([customer_service])
     end
 
-   it 'lists departments with less than $500' do
+    it 'lists departments with less than $500' do
       budget = Budget.new("2023")
       
       customer_service = Department.new("Customer Service")    
+      technology = Department.new("Technology")
 
       budget.add_departments(customer_service)
            
       expect(budget.departments_under_500).to eq([customer_service])
     end
 
-    # xit 'lists all employees' salaries' do
-    #   budget = Budget.new("2023")
+    it 'lists all employees salaries' do
+      budget = Budget.new("2023")
 
-    # end
+      customer_service = Department.new("Customer Service")
+
+      budget.add_departments(customer_service)
+
+      bobbi = Employee.new({name: "Bobbi Jaeger", age: "30", salary: "100000"})
+      aaron = Employee.new({name: "Aaron Tanaka", age: "25", salary: "90000"})
+
+      customer_service.hire(bobbi)
+      customer_service.hire(aaron)
+
+      expect(budget.salaries).to eq([100000, 90000])
+    end
   end
 end

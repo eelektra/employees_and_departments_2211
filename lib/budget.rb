@@ -1,13 +1,11 @@
 class Budget
 
   attr :year,
-       :departments,
-       :salaries
+       :departments
 
   def initialize(year)
     @year = year
     @departments = []
-    @salaries = []
   end
 
   def add_departments(department)
@@ -22,7 +20,14 @@ class Budget
     depts_under_500
   end
 
-  # def employees_salaries
-
-  # end
+  def salaries
+    salaries_list = []
+    @departments.each do |department|
+      employee_array = department.employees
+        employee_array.each do |employee|
+          salaries_list << employee.salary
+        end
+    end
+    salaries_list
+  end
 end
