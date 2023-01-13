@@ -28,5 +28,15 @@ describe Department do
       expect(customer_service.employees).to eq([bobbi, aaron])
     end
 
+    it 'expenses start at 0 and can add expenses' do
+      customer_service = Department.new("Customer Service")    
+      
+      expect(customer_service.expenses).to eq(0)
+
+      # customer_service.expense(100)
+      # customer_service.expense(25)    
+
+      # expect(customer_service.expenses).to eq(125)
+    end
   end
 end
