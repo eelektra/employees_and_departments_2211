@@ -1,8 +1,10 @@
 class Department
 
-  attr :name
-  
+  attr :name,
+       :employees
+
   def initialize(name)
     @name = name
+    @employees = []
   end
 end
