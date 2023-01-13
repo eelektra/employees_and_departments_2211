@@ -3,6 +3,7 @@ class Department
   attr :name,
        :employees,
        :expenses
+       
 
   def initialize(name)
     @name = name
