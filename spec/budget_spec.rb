@@ -7,6 +7,7 @@ describe Budget do
     it 'exists and has attributes' do
       budget = Budget.new("2023")
       expect(budget).to be_a(Budget)
+      expect(budget.year).to eq("2023")
     end
   end
 end
