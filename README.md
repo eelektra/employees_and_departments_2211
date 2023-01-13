@@ -64,7 +64,7 @@ pry(main)> aaron = Employee.new({name: "Aaron Tanaka", age: "25", salary: "90000
 
 pry(main)> customer_service.hire(bobbi)
 
-pry(main)> customer_service.hire(aaron)    
+  pry(main)> customer_service.hire(aaron)  
 
 pry(main)> customer_service.employees
 # => [#<Employee:0x00007fce46194788...>, #<Employee:0x00007fce46a610a0...>]
